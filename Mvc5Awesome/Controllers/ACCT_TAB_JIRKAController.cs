@@ -73,18 +73,29 @@ namespace Mvc5Awesome.Controllers
             return View(aCCT_TAB_JIRKA);
         }
 
-        // POST: ACCT_TAB_JIRKA/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
+        [HttpPost, ActionName("Edit")]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "AACCT,ABAL,AREST,AWDL_START,AWDL_LEN,AWDL_LMT,AWDL_TDY,TRN_DT,POS_START,POS_LEN,POS_LMT,POS_TDY,CURRENCY_TYPE,HOLD_AMOUNT,ACTUAL_BAL,LAST_UPDATE,ACCT_SEGMENT")] ACCT_TAB_JIRKA aCCT_TAB_JIRKA)
+        public ActionResult EditPost(string id)
         {
-            if (ModelState.IsValid)
+            if (id == null)
             {
-                db.Entry(aCCT_TAB_JIRKA).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            var aCCT_TAB_JIRKA = db.ACCT_TAB_JIRKA.Find(id);
+            if (TryUpdateModel(aCCT_TAB_JIRKA, "",
+                "ABAL,AREST,AWDL_START,AWDL_LEN,AWDL_LMT,AWDL_TDY,TRN_DT,POS_START,POS_LEN,POS_LMT,POS_TDY,CURRENCY_TYPE,HOLD_AMOUNT,ACTUAL_BAL,LAST_UPDATE,ACCT_SEGMENT".Split(',')))
+            {
+                try
+                {
+                    db.SaveChanges();
+
+                    return RedirectToAction("Index");
+                }
+                catch (DataException /* dex */)
+                {
+                    //Log the error (uncomment dex variable name and add a line here to write a log.
+                    ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists, see your system administrator.");
+                }
             }
             return View(aCCT_TAB_JIRKA);
         }
