@@ -1,0 +1,124 @@
+﻿@model IEnumerable<Mvc5Awesome.Models.ACCT_TAB_JIRKA>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ABAL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AREST)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AWDL_START)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AWDL_LEN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AWDL_LMT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AWDL_TDY)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TRN_DT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.POS_START)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.POS_LEN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.POS_LMT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.POS_TDY)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CURRENCY_TYPE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HOLD_AMOUNT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ACTUAL_BAL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LAST_UPDATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ACCT_SEGMENT)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ABAL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AREST)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AWDL_START)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AWDL_LEN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AWDL_LMT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AWDL_TDY)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TRN_DT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.POS_START)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.POS_LEN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.POS_LMT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.POS_TDY)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CURRENCY_TYPE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HOLD_AMOUNT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ACTUAL_BAL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LAST_UPDATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ACCT_SEGMENT)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.AACCT }) |
+            @Html.ActionLink("Details", "Details", new { id=item.AACCT }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.AACCT })
+        </td>
+    </tr>
+}
+
+</table>
