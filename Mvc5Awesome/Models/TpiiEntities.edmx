@@ -30,26 +30,7 @@ warning 6002: The table/view 'VYSOHLID.ACCT_TAB_JIRKA' does not have a primary k
           <Property Name="ACCT_SEGMENT" Type="number" Scale="0" />
         </EntityType>
         <EntityContainer Name="ModelStoreContainer">
-          <EntitySet Name="ACCT_TAB_JIRKA" EntityType="Self.ACCT_TAB_JIRKA" store:Type="Tables" store:Schema="VYSOHLID">
-            <DefiningQuery>SELECT 
-"ACCT_TAB_JIRKA"."AACCT" AS "AACCT", 
-"ACCT_TAB_JIRKA"."ABAL" AS "ABAL", 
-"ACCT_TAB_JIRKA"."AREST" AS "AREST", 
-"ACCT_TAB_JIRKA"."AWDL_START" AS "AWDL_START", 
-"ACCT_TAB_JIRKA"."AWDL_LEN" AS "AWDL_LEN", 
-"ACCT_TAB_JIRKA"."AWDL_LMT" AS "AWDL_LMT", 
-"ACCT_TAB_JIRKA"."AWDL_TDY" AS "AWDL_TDY", 
-"ACCT_TAB_JIRKA"."TRN_DT" AS "TRN_DT", 
-"ACCT_TAB_JIRKA"."POS_START" AS "POS_START", 
-"ACCT_TAB_JIRKA"."POS_LEN" AS "POS_LEN", 
-"ACCT_TAB_JIRKA"."POS_LMT" AS "POS_LMT", 
-"ACCT_TAB_JIRKA"."POS_TDY" AS "POS_TDY", 
-"ACCT_TAB_JIRKA"."CURRENCY_TYPE" AS "CURRENCY_TYPE", 
-"ACCT_TAB_JIRKA"."HOLD_AMOUNT" AS "HOLD_AMOUNT", 
-"ACCT_TAB_JIRKA"."ACTUAL_BAL" AS "ACTUAL_BAL", 
-"ACCT_TAB_JIRKA"."LAST_UPDATE" AS "LAST_UPDATE", 
-"ACCT_TAB_JIRKA"."ACCT_SEGMENT" AS "ACCT_SEGMENT"
-FROM "VYSOHLID"."ACCT_TAB_JIRKA" "ACCT_TAB_JIRKA"</DefiningQuery>
+          <EntitySet Name="ACCT_TAB_JIRKA" EntityType="Self.ACCT_TAB_JIRKA" store:Type="Tables" store:Schema="VYSOHLID">            
           </EntitySet>
         </EntityContainer>
       </Schema>
