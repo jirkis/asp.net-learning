@@ -1,0 +1,26 @@
+﻿@model Mvc5Awesome.ViewModels.Input.DeleteAcctTabJirkaConfirmInput
+@using (Html.BeginForm())
+{
+    @Html.Raw(Model.Message)
+}
+
+<input type="hidden" id="popupPivot@(Model.AACCT)" />
+
+@if (Model.GridId != null)
+{
+    <script>
+        (function () {
+            var rows = $('#@(Model.GridId)').data('api').select(@(Model.AACCT));
+            $.map(rows, function (row) {
+                row.data('initbc', row.css('background-color'));
+                row.animate({ 'background-color': '#FFEC9E' });
+            });
+
+            $('#popupPivot@(Model.AACCT)').closest('.awe-popup').on('aweclose', function () {
+            $.map(rows, function (row) {
+                row.animate({ 'background-color': row.data('initbc') });
+            });
+        });
+        })();
+    </script>
+}

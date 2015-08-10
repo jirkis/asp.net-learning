@@ -1,0 +1,10 @@
+﻿@model Mvc5Awesome.ViewModels.Input.AcctTabJirkaInput
+@using (Html.BeginForm())
+{
+    using (Html.Awe().BeginContext())
+    {
+        @Html.EditorFor(o => o.AACCT)
+        @Html.EditorFor(o => o.ABAL)
+        @Html.EditorFor(o => o.AWDL_START)        
+    }
+} 

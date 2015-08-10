@@ -1,13 +1,33 @@
-﻿@model IEnumerable<Mvc5Awesome.Models.ACCT_TAB_JIRKA>
+﻿@using Omu.AwesomeMvc
+@*@model IEnumerable<Mvc5Awesome.Models.ACCT_TAB_JIRKA>*@
 
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Index</h2>
 
-<p>
+@Html.InitCrudPopupsForGrid("AcctTabJirkaGrid", "AcctTabJirkaGridCrud")
+
+<div class="bar">
+    <button type="button" onclick="awe.open('createAcctTabJirkaGrid')" class="awe-btn mbtn">Create</button>
+</div>
+
+@(Html.Awe().Grid("AcctTabJirkaGrid")
+            .Mod(o => o.PageInfo().ColumnsSelector())
+                .Url(Url.Action("GridGetItems", "AcctTabJirkaGridCrud"))
+            .Height(550)
+            .Columns(
+                    new Column { Name = "ABAL", Width = 150 },
+                    new Column { Name = "AACCT" }.Mod(o => o.Nohide()),
+                    new Column { Name = "AWDL_START" },
+                    new Column { ClientFormat = GridUtils.EditFormatForGrid("AcctTabJirkaGrid", "AACCT"), Width = 50 }.Mod(o => o.Nohide()),
+                    new Column { ClientFormat = GridUtils.DeleteFormatForGrid("AcctTabJirkaGrid", "AACCT"), Width = 50 }.Mod(o => o.Nohide())))
+
+
+
+@*<p>
     @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
@@ -121,4 +141,4 @@
     </tr>
 }
 
-</table>
+</table>*@

@@ -10,7 +10,7 @@ using Mvc5Awesome.Models;
 
 namespace Mvc5Awesome.Controllers
 {
-    public class ACCT_TAB_JIRKAController : Controller
+    public class oldACCT_TAB_JIRKAController : Controller
     {
         private TpiiEntities db = new TpiiEntities();
 

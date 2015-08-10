@@ -153,10 +153,12 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Content Include="Content\Common.css" />
-    <Compile Include="Controllers\ACCT_TAB_JIRKAController.cs" />
+    <Compile Include="Controllers\AcctTabJirkaController.cs" />
+    <Compile Include="Controllers\oldACCT_TAB_JIRKAController.cs" />
     <Compile Include="Controllers\Awesome\DataController.cs" />
     <Compile Include="Controllers\Awesome\Lookup\ChefLookupController.cs" />
     <Compile Include="Controllers\Awesome\MultiLookup\MealsMultiLookupController.cs" />
+    <Compile Include="Controllers\AcctTabJirkaGridCrudController.cs" />
     <Compile Include="Controllers\DinnersGridCrudController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="GlimpseSecurityPolicy.cs" />
@@ -196,7 +198,9 @@
     <Content Include="Scripts\utils.js" />
     <Compile Include="Utils\GridUtils.cs" />
     <Compile Include="Utils\MobileUtils.cs" />
+    <Compile Include="ViewModels\Input\DeleteAcctTabJirkaConfirmInput.cs" />
     <Compile Include="ViewModels\Input\DeleteConfirmInput.cs" />
+    <Compile Include="ViewModels\Input\AcctTabJirkaInput.cs" />
     <Compile Include="ViewModels\Input\DinnerInput.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -232,11 +236,10 @@
       <DependentUpon>TpiiEntities.edmx</DependentUpon>
       <LastGenOutput>TpiiEntities.cs</LastGenOutput>
     </Content>
-    <Content Include="Views\ACCT_TAB_JIRKA\Create.cshtml" />
-    <Content Include="Views\ACCT_TAB_JIRKA\Delete.cshtml" />
-    <Content Include="Views\ACCT_TAB_JIRKA\Details.cshtml" />
-    <Content Include="Views\ACCT_TAB_JIRKA\Edit.cshtml" />
-    <Content Include="Views\ACCT_TAB_JIRKA\Index.cshtml" />
+    <Content Include="Views\AcctTabJirka\Index.cshtml" />
+    <Content Include="Views\AcctTabJirkaGridCrud\Create.cshtml" />
+    <Content Include="Views\AcctTabJirkaGridCrud\Delete.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Int64.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
